@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@drawable/suncloud"/>
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Москва"
+        android:layout_toRightOf="@id/image"
+        android:textSize="35sp"/>
+    <TextView
+        android:id="@+id/temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-2°"
+        android:textSize="95sp"
+        android:layout_toRightOf="@id/image"
+        android:layout_alignBottom="@id/image"
+        android:layout_marginLeft="10dp"/>
+    <GridLayout
+        android:id="@+id/checked_params"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image"
+        android:columnCount="3"
+        android:rowCount="2">
+        <TextView
+            android:id="@+id/showPressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Давение"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/showWind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Сила ветра"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/showHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Влажность"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/showPressureParam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="50 мл/рт/ст"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/showWindParam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="5 м/с"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/showHumidityParam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="20%"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"/>
+    </GridLayout>
+
+</LinearLayout>

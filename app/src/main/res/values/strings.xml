@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="city1">Москва</string>
+    <string name="city2">Санкт-Петербург</string>
+    <string name="city3">Казань</string>
+    <string name="city4">Уфа</string>
+</resources>
