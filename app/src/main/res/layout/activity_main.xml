@@ -69,4 +69,33 @@
             android:text="Влажность"
             android:checked="true"/>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/showSensorsInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Погода вокруг"
+        android:layout_gravity="center"/>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="1"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/temperatureSensorInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/humiditySensorInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"/>
+    </GridLayout>
+
+
 </LinearLayout>

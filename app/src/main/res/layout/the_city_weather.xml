@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -38,7 +39,6 @@
             android:id="@+id/showPressure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="Давение"
             android:layout_margin="10dp"
             android:layout_gravity="center"/>
@@ -46,7 +46,6 @@
             android:id="@+id/showWind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="Сила ветра"
             android:layout_margin="10dp"
             android:layout_gravity="center"/>
@@ -54,7 +53,6 @@
             android:id="@+id/showHumidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="Влажность"
             android:layout_margin="10dp"
             android:layout_gravity="center"/>
@@ -62,7 +60,6 @@
             android:id="@+id/showPressureParam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="50 мл/рт/ст"
             android:layout_margin="10dp"
             android:layout_gravity="center"/>
@@ -70,7 +67,6 @@
             android:id="@+id/showWindParam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="5 м/с"
             android:layout_margin="10dp"
             android:layout_gravity="center"/>
@@ -78,10 +74,24 @@
             android:id="@+id/showHumidityParam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="20%"
             android:layout_margin="10dp"
             android:layout_gravity="center"/>
     </GridLayout>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.gabdullin.rail.weather.GraphView
+            android:layout_width="350dp"
+            android:layout_height="400dp"
+            app:cv_height="400"
+            app:cv_width="850"
+            android:layout_gravity="center_horizontal"
+            app:line_color="@android:color/darker_gray"
+            app:dots_color="@android:color/darker_gray"
+            app:text_color="@android:color/darker_gray"
+            />
+    </FrameLayout>
+
 
 </LinearLayout>
