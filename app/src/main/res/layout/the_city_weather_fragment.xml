@@ -41,42 +41,48 @@
             android:layout_height="wrap_content"
             android:text="Давение"
             android:layout_margin="10dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:visibility="gone"/>
         <TextView
             android:id="@+id/showWind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Сила ветра"
             android:layout_margin="10dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:visibility="gone"/>
         <TextView
             android:id="@+id/showHumidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Влажность"
             android:layout_margin="10dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:visibility="gone"/>
         <TextView
             android:id="@+id/showPressureParam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="50 мл/рт/ст"
             android:layout_margin="10dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:visibility="gone"/>
         <TextView
             android:id="@+id/showWindParam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5 м/с"
             android:layout_margin="10dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:visibility="gone"/>
         <TextView
             android:id="@+id/showHumidityParam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="20%"
             android:layout_margin="10dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:visibility="gone"/>
     </GridLayout>
     <FrameLayout
         android:layout_width="wrap_content"

@@ -18,11 +18,11 @@ public class GraphView extends View {
     private Paint paintForDots;
 
     private int colorForLines;
-
     private int colorForDots;
     private int colorForText;
     private int height;
     private int width;
+
     public static final int NUMBER_OF_VERT_LINES = 9;
 
     public GraphView(Context context) {
