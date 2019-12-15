@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/basic"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/theCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginTop="50dp">
+        <CheckBox
+            android:id="@+id/showPressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Давение"
+            android:checked="true"/>
+        <CheckBox
+            android:id="@+id/showWind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Сила ветра"
+            android:checked="true"/>
+        <CheckBox
+            android:id="@+id/showHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Влажность"
+            android:checked="true"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/showWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Показать погоду"
+        android:layout_gravity="center"/>
+
+
+    <Button
+        android:id="@+id/showSensorsInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Погода вокруг"
+        android:layout_gravity="center"/>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="1"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/temperatureSensorInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/humiditySensorInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+    </GridLayout>
+    <Button
+        android:id="@+id/starService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Погодный сервис"
+        android:layout_gravity="center"/>
+
+
+</LinearLayout>
