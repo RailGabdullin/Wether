@@ -15,8 +15,8 @@ import androidx.fragment.app.Fragment;
 
 public class FragmentBrowser extends Fragment {
 
-    String content;
-    Handler handler = new Handler();
+    private String content;
+    private Handler handler = new Handler();
 
     @Nullable
     @Override

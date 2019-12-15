@@ -1,6 +1,8 @@
 package com.gabdullin.rail.weather;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -10,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,6 +26,7 @@ public class MainFragment extends Fragment {
     private CheckBox showWind;
     private CheckBox showPressure;
     private CheckBox showHumidity;
+    private EditText theCity;
 
     private SensorManager sensorManager;
     private Sensor sensorTemperature;
@@ -30,6 +34,8 @@ public class MainFragment extends Fragment {
 
     private TextView temperatureSensorInfo;
     private TextView humiditySensorInfo;
+
+    private SharedPreferences preferences;
 
 
     @Nullable
@@ -41,32 +47,12 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        showWind = view.findViewById(R.id.showWind);
-        showPressure = view.findViewById(R.id.showPressure);
-        showHumidity = view.findViewById(R.id.showHumidity);
-
-        view.findViewById(R.id.Moscow).setOnClickListener(new View.OnClickListener() {
+        initPreferences(view);
+        view.findViewById(R.id.showWeather).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startSecondActivity("Москва", showWind.isChecked(), showPressure.isChecked(), showHumidity.isChecked());
-            }
-        });
-        view.findViewById(R.id.SPb).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startSecondActivity("Санкт-Петербург", showWind.isChecked(), showPressure.isChecked(), showHumidity.isChecked());
-            }
-        });
-        view.findViewById(R.id.Kazan).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startSecondActivity("Казань", showWind.isChecked(), showPressure.isChecked(), showHumidity.isChecked());
-            }
-        });
-        view.findViewById(R.id.Ufa).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startSecondActivity("Уфа", showWind.isChecked(), showPressure.isChecked(), showHumidity.isChecked());
+                savePreferences();
+                startSecondActivity(theCity.getText().toString(), showWind.isChecked(), showPressure.isChecked(), showHumidity.isChecked());
             }
         });
 
@@ -107,6 +93,25 @@ public class MainFragment extends Fragment {
             }
         });
         super.onViewCreated(view, savedInstanceState);
+    }
+
+    private void savePreferences() {
+        preferences.edit().putString("THE_CITY", theCity.getText().toString()).apply();
+        preferences.edit().putBoolean("WIND_IS_CHECKED", showWind.isChecked()).apply();
+        preferences.edit().putBoolean("PRESSURE_IS_CHECKED", showPressure.isChecked()).apply();
+        preferences.edit().putBoolean("HUMIDITY_IS_CHECKED", showHumidity.isChecked()).apply();
+    }
+
+    private void initPreferences (View view) {
+        preferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+        theCity = view.findViewById(R.id.theCity);
+        theCity.setText(preferences.getString("THE_CITY", "Введите ваш город"));
+        showWind = view.findViewById(R.id.showWind);
+        showWind.setChecked(preferences.getBoolean("WIND_IS_CHECKED", true));
+        showPressure = view.findViewById(R.id.showPressure);
+        showPressure.setChecked(preferences.getBoolean("PRESSURE_IS_CHECKED", true));
+        showHumidity = view.findViewById(R.id.showHumidity);
+        showHumidity.setChecked(preferences.getBoolean("HUMIDITY_IS_CHECKED", true));
     }
 
     void startSecondActivity(String city, boolean isShowWindChecked, boolean isShowPressureChecked, boolean isShowHumidityChecked){
