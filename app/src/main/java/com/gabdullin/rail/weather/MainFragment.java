@@ -31,6 +31,7 @@ public class MainFragment extends Fragment {
     private TextView temperatureSensorInfo;
     private TextView humiditySensorInfo;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -94,6 +95,15 @@ public class MainFragment extends Fragment {
                 } else {
                     humiditySensorInfo.setText("Нет датчика");
                 }
+            }
+        });
+
+        view.findViewById(R.id.starService).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startService(new Intent(getActivity(), WeatherService.class));
+                getActivity().getSupportFragmentManager().beginTransaction().add(android.R.id.content, new FragmentBrowser()).commit();
+
             }
         });
         super.onViewCreated(view, savedInstanceState);
